@@ -1,0 +1,45 @@
+H_size = 256
+W_size = 256
+batch_size = 10
+epochs = 1000000
+tasks = 18
+processes = 18
+inter_op_parallelism_threads=7
+allow_growth = True
+noise_size = 100
+cond_emb_dim = 100
+input_channels = 3
+D_step = 1000
+save_step = 50000
+load_previous_weigth = False
+reuse_dataset = True
+max_pic_save = 50
+max_images_for_activity = 20
+load_pretrained_inception = True
+max_no_D_impro = 2
+max_no_G_impro = 20
+D_loss_thresh = 0.1
+Ng = 32
+Nd = 64
+lambda_1 = 1
+lambda_2 = 5
+
+alfa_color = 50
+alfa_classification_D = 10
+alfa_classification_G = 0
+alfa_mean = 0
+
+action = 'karaoke'
+visible_gpu = '2,3'
+#action = 'moving_child'
+#visible_gpu = '0,1'
+dataset_folder = '/media/Data/Lorenzo/Code/Kinetcs_no_vid/processed_frames/' + action + '/all_conditioning/ClassesIcons'
+ckpt_load_folder = './checkpoint/'  + action + '/'
+model_filename = ckpt_load_folder + 'Net_weigths.model'
+checkpoint_file_check = ckpt_load_folder +  '/checkpoint'
+out_path = './results/' + action + '/'
+mean_size = 32
+norm_min = 0
+norm_max = 1
+
+num_patches = 8
