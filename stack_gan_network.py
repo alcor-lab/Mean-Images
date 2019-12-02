@@ -78,8 +78,8 @@ class ganNet():
             # networks : discriminator
             # with tf.name_scope('Discriminators'):
             with tf.name_scope('Discriminator_64'):G_64_out
-                D_real_logits_64, D_real_64, D_real_class_logit_64 , D_real_class_64 = self.discriminator(G_64_out, y_fill, 3, 'discriminator_64x64', 8*config.Nd, self.isTrain, reuse=False)
-                D_fake_logits_64, D_fake_64, D_fake_class_logit_64 , D_fake_class_64 = self.discriminator(x_64, y_fill, 3, 'discriminator_64x64', 8*config.Nd, self.isTrain, reuse=True)
+                D_real_logits_64, D_real_64, D_real_class_logit_64 , D_real_class_64 = self.discriminator(x_64, y_fill, 3, 'discriminator_64x64', 8*config.Nd, self.isTrain, reuse=False)
+                D_fake_logits_64, D_fake_64, D_fake_class_logit_64 , D_fake_class_64 = self.discriminator(G_64_out, y_fill, 3, 'discriminator_64x64', 8*config.Nd, self.isTrain, reuse=True)
 
             with tf.name_scope('Discriminator_128'):
                 D_real_logits_128, D_real_128, D_real_class_logit_128 , D_real_class_128 = self.discriminator(x_128, y_fill, 4, 'discriminator_128x128', 8*config.Nd, self.isTrain, reuse=False)
